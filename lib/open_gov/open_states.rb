@@ -13,6 +13,10 @@ module OpenGov
 
         # If available from OpenStates, use the latest_dump_url and latest_dump_date.
         openstates_url = fs_state[:latest_dump_url]
+        if openstates_url.nil?
+	  puts "No openstates_url returned for #{state.name}; skipping download."
+          return
+        end
         openstates_fn = File.basename(openstates_url)
         openstates_date = (fs_state[:latest_dump_date] && fs_state[:latest_dump_date].to_time) || Time.now
         

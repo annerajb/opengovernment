@@ -1,0 +1,53 @@
+en-PR:
+  states:
+    blue_party_label: 'New Progressive Party'
+    red_party_label: 'Popular Democratic Party'
+    grey_party_label: 'Other'
+    show: 
+      background: |       
+        Here are more links with background on the Puerto Rico government and the best online explanations of how its legislative branch works: 
+        <ul class="standard">
+        <li>The official website of the <a href="http://www.senadopr.us/">Puerto Rico State Legislature</a></li>
+        <li>The <a href="http://www.mmb.state.mn.us/tap">Transparency and Accountability Project for Minnesota</a>, a government website making budget, spending and contracting information more easily accessible</li>
+        <li>Wikipedia articles on the <a href="http://en.wikipedia.org/wiki/House_of_Representatives_of_Puerto_Rico">House of Representatives</a> and <a href="http://en.wikipedia.org/wiki/Senate_of_Puerto_Rico">Senate</a></li> 
+        <li>OpenCongress pages for <a href="http://www.opencongress.org/states/PR">PR federal legislators</a>, including <a href="http://www.opencongress.org/people/senators#M">senators</a> and <a href="http://www.opencongress.org/people/representatives#PR">representatives</a>.</li>
+        <li><a href="http://www.govloop.com/">GovLoop</a> - social networking for government, including employees from federal, state, and local government.</li>
+        <li><a href="http://www.lexjuris.com">Puerto Rico State Laws</a> online on Lexjuris </li> 
+        <li>Official <a href="http://www2.pr.gov/Pages/default.aspx">PR State Government portal</a></li>
+        <li>Search for hashtag <a href="http://twitter.com/#!/search/%23prleg">#p5leg</a> on the popular closed micro-publishing service, Twitter.</li>
+        </ul>
+        How did we obtain this official government information? Almost no U.S. legislature (including Puerto Rico) makes its data available in ways that are fully compliant with the community-generated <a href="http://www.opengovdata.org/" target="_blank">Principles of Open Government Data</a>, so we had to work around them. Read more <a href="/pages/about/#our_data_sources">about our data sources</a>. 
+        
+  videos:
+    miro_url: 'http://propengov.mirocommunity.org/'
+
+  state_population: |
+        2008 State Population est. 3,954,037 (cit
+        <a href="http://www2.pr.gov/agencias/censo/EstimacionPoblacion/Pages/EstimacionesNegocios.aspx" target="_blank">censo.pr.gov</a>)
+
+        state_pop_per_upper_chamber_member: "774,447 Puerto Ricans"
+        state_pop_per_lower_chamber_member: "165,215 Puerto Ricans"
+
+        state_last_election_upper_chamber: |
+          Last election: Nov. 4th, 2008. 15 seats were up for election (9 R, 6 D). Incumbents re-elected (# R, #D).
+          Over the past ## cycles, incumbents win ##% of the times they run. Democrats gained 1 seat, District #.
+          One Republican resigned and was replaced by a Republican."
+        state_next_election_upper_chamber: |
+          Next election: Nov. 4nd, 2012. 
+
+        current_session: "Jan 2009 - Dec 2012)"
+        upper_chamber_active_session_date: "Most recent regular session: Jan 13th - July 2nd, 2009"
+
+        last_election_date: "Nov. 4, 2008"
+
+        last_election_upper_chamber_seat_changes: |
+          Democrats gained 1 seat, District 10. One Republican resigned (District 17) and was replaced by a
+          Republican.
+        next_election_date: "Nov. 4, 2012"
+        next_election_upper_chamber_seats_available: "15 seats up for election"
+        next_session_start_date: "Jan. 11th, 2011"
+        upper_chamber_term_limit: "no term limits"
+        last_election_lower_chamber_open_seats:
+        last_election_lower_chamber_incumbent_seats:
+        next_election_lower_chamber_seats_available:
+

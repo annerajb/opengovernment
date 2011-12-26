@@ -173,7 +173,7 @@ module OpenGov
           unless version[:url].blank?
             v = BillDocument.find_or_initialize_by_bill_id_and_url(@bill.id, version[:url])
             v.attributes = {
-              :name => version[:name],
+              :name => version[:name][0,255],
               :published_at => Date.valid_date!(version[:'+date']),
               :document_type => 'version',
               :updated_at => @sync_date
@@ -188,7 +188,7 @@ module OpenGov
           unless doc[:url].blank?
             document = BillDocument.find_or_initialize_by_bill_id_and_url(@bill.id, doc[:url])
             document.attributes = {
-              :name => doc[:name],
+              :name => doc[:name][0,255],
               :published_at => Date.valid_date!(doc[:'+date']),
               :document_type => 'document',
               :updated_at => @sync_date

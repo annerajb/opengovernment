@@ -252,6 +252,7 @@ pr:
   id: 42
   name: Puerto Rico
   fips_code: 72
+  launch_date: 2011-12-20
   official_url: http://www.oslpr.org/
 ri:
   abbrev: RI

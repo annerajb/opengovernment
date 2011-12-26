@@ -113,17 +113,17 @@ namespace :load do
     puts "\n---------- Loading news & blog mentions"
     Rake::Task['load:mentions'].invoke
     puts "\n---------- Loading PVS contribution and ratings data"
-    Rake::Task['load:industries'].invoke
-    Rake::Task['load:contributions'].invoke
-    Rake::Task['load:ratings'].invoke
+    #Rake::Task['load:industries'].invoke
+    #Rake::Task['load:contributions'].invoke
+    #Rake::Task['load:ratings'].invoke
     puts "\n---------- Fetch VoteSmart photos and attach them to people"
-    Rake::Task['sync:photos'].invoke
+    #Rake::Task['sync:photos'].invoke
   end
   
   desc "Load test fixtues and key imported data into the dev environment"
   task :dev => :environment do
     Rake::Task['load:fixtures:test'].invoke
-    OpenGov::Ratings.new.import_categories
+    #OpenGov::Ratings.new.import_categories
   end
 
   namespace :fixtures do
@@ -173,8 +173,8 @@ namespace :load do
     puts "Loading bills from Open State data"
     with_states do |state|
       if state
-        OpenGov::Bills.new.import_state(state)
-        OpenGov::KeyVotes.new.import_state(state)
+        #OpenGov::Bills.new.import_state(state)
+        #OpenGov::KeyVotes.new.import_state(state)
       else
         OpenGov::Bills.new.import
         OpenGov::KeyVotes.new.import
