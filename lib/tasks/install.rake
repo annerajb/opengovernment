@@ -64,7 +64,7 @@ namespace :fetch do
   end
 
   task :all do
-    Rake::Task['fetch:boundaries'].invoke
+#    Rake::Task['fetch:boundaries'].invoke
     Rake::Task['fetch:openstates'].invoke
     Rake::Task['fetch:geoip'].invoke
   end
@@ -89,7 +89,7 @@ namespace :fetch do
   desc "Get the openstates files for all active states"
   task :openstates => :setup do
     # Download the bills & legislator data from OpenStates.
-
+    puts "bills fetch"
     with_states do |state|
       state ? OpenGov::OpenStates.new.fetch_one(state) : OpenGov::OpenStates.new.fetch
     end
@@ -102,16 +102,16 @@ namespace :load do
     # We don't load fixtures here anymore-- we load them earlier so we can use them to fetch the right districts and bills.
 
     puts "\n---------- Loading legislatures and districts"
-    Rake::Task['load:legislatures'].execute
-    Rake::Task['load:boundaries'].invoke
+    #Rake::Task['load:legislatures'].execute
+    #Rake::Task['load:boundaries'].invoke
     puts "\n---------- Loading people"
-    Rake::Task['load:people'].invoke
+    #Rake::Task['load:people'].invoke
     puts "\n---------- Loading committees and committee memberships"
-    Rake::Task['load:committees'].invoke
+    #Rake::Task['load:committees'].invoke
     puts "\n---------- Loading bills"
     Rake::Task['load:bills'].invoke
     puts "\n---------- Loading news & blog mentions"
-    Rake::Task['load:mentions'].invoke
+    #Rake::Task['load:mentions'].invoke
     puts "\n---------- Loading PVS contribution and ratings data"
     #Rake::Task['load:industries'].invoke
     #Rake::Task['load:contributions'].invoke
@@ -173,11 +173,11 @@ namespace :load do
     puts "Loading bills from Open State data"
     with_states do |state|
       if state
-        #OpenGov::Bills.new.import_state(state)
+        OpenGov::Bills.new.import_state(state)
         #OpenGov::KeyVotes.new.import_state(state)
       else
         OpenGov::Bills.new.import
-        OpenGov::KeyVotes.new.import
+        #OpenGov::KeyVotes.new.import
       end
     end
   end
@@ -217,7 +217,7 @@ namespace :load do
     with_states do |state|
       state ? OpenGov::People.new.import_state(state) : OpenGov::People.new.import
       Dir.chdir(Rails.root)
-      GovTrackImporter.new.import!
+#      GovTrackImporter.new.import!
 
       # These methods all act on all people with votesmart ids
       Dir.chdir(Rails.root)

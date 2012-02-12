@@ -12,9 +12,9 @@ module OpenGov
     end
 
     def import_state(state, options = {})
-      if options[:remote]
+ #     if options[:remote]
         import_remote(state, options)
-      else
+=begin    else
         state_dir = File.join(Settings.openstates_dir, "bills", state.abbrev.downcase)
 
         unless File.exists?(state_dir)
@@ -43,30 +43,31 @@ module OpenGov
             end
           end
         end
-      end
+      endi
+=end
     end
 
     def import_remote(state, options = {})
       puts "\nUpdating Open State bill data for #{state.name} from remote API"
 
-      if state.bills.count > 0
-        latest_updated_date = Bill.where(:state_id => state.id).maximum(:openstates_updated_at).to_date
+#      if state.bills.count > 0
+    #    latest_updated_date = Bill.where(:state_id => state.id).maximum(:openstates_updated_at).to_date
 
         begin
-          bills = GovKit::OpenStates::Bill.latest(latest_updated_date, :state => state.abbrev.downcase)
+          bills = GovKit::OpenStates::Bill.latest("2012-02-01", :state => state.abbrev.downcase)
         rescue GovKit::ResourceNotFound
           puts "No updates for #{state.name}."
           return
         end
-      else
-        puts "You have no existing bills to update. Please import an initial set of bills for this state."
-        return
-      end
+ #     else
+  #      puts "You have no existing bills to update. Please import an initial set of bills for this state."
+   #     return
+   #   end
 
       if bills.empty?
         puts "No bills found \n"
       else
-        puts "Importing/updating #{bills.size} bills updated since #{latest_updated_date.to_s}"
+        #puts "Importing/updating #{bills.size} bills updated since #{latest_updated_date.to_s}"
         bills.each_with_index do |bill, i|
           if i % 10 == 0
             print '.'

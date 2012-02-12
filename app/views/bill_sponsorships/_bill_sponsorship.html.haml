@@ -4,7 +4,7 @@
       -# Photo to show
       .photo= link_to(photo_for(bill_sponsorship.sponsor, :thumb), person_path(bill_sponsorship.sponsor))
       .sponsor-meta
-        .sponsor-name= link_to(bill_sponsorship.sponsor.full_name + ' (' + bill_sponsorship.sponsor.current_role.try(:affiliation_fm) + ')', person_path(bill_sponsorship.sponsor))
+        .sponsor-name= link_to(bill_sponsorship.sponsor.full_name + ' (+ bill_sponsorship.sponsor.current_role.try(:affiliation_fm) + )', person_path(bill_sponsorship.sponsor))
         .sponsor-kind= bill_sponsorship.kind_fm 
     - else
       -# No photo available -- show missing photo instead
