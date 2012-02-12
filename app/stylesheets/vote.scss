@@ -61,23 +61,23 @@ margin: 0;
   }
 
   /* showing vote color boxes */
-  .vote_dem_yes, .vote_dfl_yes {
+  .vote_dem_yes, .vote_dfl_yes, .vote_pnp_yes {
     background: url(../images/votes/dem-yes-box.gif) no-repeat 0% 50%;
   }
-   .vote_dem_no, .vote_dfl_no {
+   .vote_dem_no, .vote_dfl_no, .vote_pnp_no {
     background: url(../images/votes/dem-no-box.gif) no-repeat 0% 50%;
   }
-   .vote_dem_other,  .vote_dfl_other {
+   .vote_dem_other,  .vote_dfl_other, .vote_pnp_other {
     background: url(../images/votes/dem-other-box.gif) no-repeat 0% 50%;
   }
 
-   .vote_rep_yes {
+   .vote_rep_yes, .vote_ppd_yes {
     background: url(../images/votes/rep-yes-box.gif) no-repeat 0% 50%;
   }
-   .vote_rep_other {
+   .vote_rep_other, .vote_ppd_other {
     background: url(../images/votes/rep-other-box.gif) no-repeat 0% 50%;
   }
-   .vote_rep_no {
+   .vote_rep_no, .vote_ppd_no {
     background: url(../images/votes/rep-no-box.gif) no-repeat 0% 50%;
   }
 

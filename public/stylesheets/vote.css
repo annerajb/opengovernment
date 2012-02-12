@@ -66,27 +66,27 @@ tr.committee-vote h4 {
   font-size: 12px;
 }
 /* line 64, ../../app/stylesheets/vote.scss */
-.roll_call .vote_dem_yes, .roll_call .vote_dfl_yes {
+.roll_call .vote_dem_yes, .roll_call .vote_dfl_yes, .roll_call .vote_pnp_yes {
   background: url(../images/votes/dem-yes-box.gif) no-repeat 0% 50%;
 }
 /* line 67, ../../app/stylesheets/vote.scss */
-.roll_call .vote_dem_no, .roll_call .vote_dfl_no {
+.roll_call .vote_dem_no, .roll_call .vote_dfl_no, .roll_call .vote_pnp_no {
   background: url(../images/votes/dem-no-box.gif) no-repeat 0% 50%;
 }
 /* line 70, ../../app/stylesheets/vote.scss */
-.roll_call .vote_dem_other, .roll_call .vote_dfl_other {
+.roll_call .vote_dem_other, .roll_call .vote_dfl_other, .roll_call .vote_pnp_other {
   background: url(../images/votes/dem-other-box.gif) no-repeat 0% 50%;
 }
 /* line 74, ../../app/stylesheets/vote.scss */
-.roll_call .vote_rep_yes {
+.roll_call .vote_rep_yes, .roll_call .vote_ppd_yes {
   background: url(../images/votes/rep-yes-box.gif) no-repeat 0% 50%;
 }
 /* line 77, ../../app/stylesheets/vote.scss */
-.roll_call .vote_rep_other {
+.roll_call .vote_rep_other, .roll_call .vote_ppd_other {
   background: url(../images/votes/rep-other-box.gif) no-repeat 0% 50%;
 }
 /* line 80, ../../app/stylesheets/vote.scss */
-.roll_call .vote_rep_no {
+.roll_call .vote_rep_no, .roll_call .vote_ppd_no {
   background: url(../images/votes/rep-no-box.gif) no-repeat 0% 50%;
 }
 /* line 84, ../../app/stylesheets/vote.scss */

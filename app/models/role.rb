@@ -25,9 +25,9 @@ class Role < ActiveRecord::Base
   scope :for_chamber, lambda { |c| { :conditions => {:chamber_id => c} } }
   scope :for_session, lambda { |s| {:conditions => {:session_id => s} } }
   scope :for_state, lambda { |s| { :conditions => ['roles.district_id in (select id from districts where state_id = ?) or roles.state_id = ?', s, s] } }
-  scope :democrats, where("party in ('Democrat','Democratic','Democratic-Farmer-Labor')")
-  scope :republicans, where("party = 'Republican'")
-  scope :others, where("party not in ('Democrat','Republican','Democratic','Democratic-Farmer-Labor')")
+  scope :democrats, where("party in ('Democrat','Democratic','Democratic-Farmer-Labor','Partido Nuevo Progresista')")
+  scope :republicans, where("party in ( 'Republican','Partido Popular Democrático')")
+  scope :others, where("party not in ('Democrat','Republican','Democratic','Democratic-Farmer-Labor','Partido Nuevo Progresista','Partido Popular Democrático')")
   scope :current, on_date(Date.today)
   scope :by_last_name, joins(:person).order('people.last_name')
 
@@ -51,6 +51,10 @@ class Role < ActiveRecord::Base
       "rep"
     when "Democratic-Farmer-Labor"
       "dfl"
+    when "Partido Nuevo Progresista"
+      "pnp"
+    when "Partido Popular Democrático"
+      "ppd"
     when "Independent"
       "ind"
     end
@@ -70,6 +74,10 @@ class Role < ActiveRecord::Base
         "DFL"
       when "Republican"
         "R"
+      when "Partido Nuevo Progresista"
+        "PNP"
+      when "Partido Popular Democrático"
+        "PPD"
       else
         "I"
     end
@@ -87,6 +95,10 @@ class Role < ActiveRecord::Base
         "Democrat"
       when "Democratic-Farmer-Labor"
         "Democratic-Farmer-Laborer"
+      when "Partido Nuevo Progresista","PNP"
+        "Partido Nuevo Progresista"
+      when "Partido Popular Democrático","ppd"
+        "Partido Popular Democrático"
       else
         party
     end
