@@ -12,39 +12,7 @@ module OpenGov
     end
 
     def import_state(state, options = {})
- #     if options[:remote]
         import_remote(state, options)
-=begin    else
-        state_dir = File.join(Settings.openstates_dir, "bills", state.abbrev.downcase)
-
-        unless File.exists?(state_dir)
-          puts "Local Open State API data for #{state.name} is missing."
-          return import_state(state, options.merge({ :remote => true }))
-        end
-
-        puts "\nLoading local Open State data for #{state.name}."
-        state.sessions.each do |session|
-          [GovKit::OpenStates::CHAMBER_LOWER, GovKit::OpenStates::CHAMBER_UPPER].each do |house|
-            bills_dir = File.join(state_dir, session.name, house)
-            all_bills = File.join(bills_dir, "*")
-            Dir.glob(all_bills).each_with_index do |file, i|
-              if i % 10 == 0
-                print '.'
-                $stdout.flush
-              end
-
-              begin
-                bill = GovKit::OpenStates::Bill.parse(JSON.parse(File.read(file)))
-                import_bill(bill, state, options)
-              rescue ArgumentError => e
-                puts "Failed to import bill #{file}: #{e}"
-                puts e.backtrace
-              end
-            end
-          end
-        end
-      endi
-=end
     end
 
     def import_remote(state, options = {})
